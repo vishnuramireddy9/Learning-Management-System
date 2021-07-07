@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/signup.css">
+  <title>Signup</title>
+</head>
+<body>
+  <div class="temp">
+    <div class="cover">
+      <div class="head">
+        <div class="signup">Sign up</div>
+        <p class="text">It's quick and easy</p>
+      </div>
+      <div class="container">
+        <div class="name">
+          <div class="first">
+            <input type="text" id="first-name" placeholder="First Name">
+          </div>
+          <div class="last">
+            <input type="text" placeholder="SurName">
+          </div>
+        </div>
+        <div class="email">
+          <input type="text" placeholder="Email Address">
+        </div>
+        <div class="password">
+          <input type="password" placeholder="New Password">
+        </div>
+        <div class="dob">
+          <div class="day">
+            <select name="day" id="day">
+              <%for(let i=1;i<=31;i++){%>
+              <option value="<%=i%>"><%=i%></option>
+              <%}%>
+            </select>
+          </div>
+          <div class="month">
+            <select name="Month" id="month">
+              <option value="Jan">Jan</option>
+              <option value="Feb">Feb</option>
+              <option value="Mar">Mar</option>
+              <option value="Apr">Apr</option>
+              <option value="May">May</option>
+              <option value="Jun">Jun</option>
+              <option value="Jul">Jul</option>
+              <option value="Aug">Aug</option>
+              <option value="Sep">Sep</option>
+              <option value="Oct">Oct</option>
+              <option value="Nov">Nov</option>
+              <option value="Dec">Dec</option>
+            </select>
+          </div>
+          <div class="year">
+            <select name="year" id="year">
+              <%for(let i=2021;i>=1990;i--){%>
+              <option value="<%=i%>"><%=i%></option>
+              <%}%>
+            </select>
+          </div>
+          <div class="gender">
+            <label for="gender">Gender</label>
+            <input type="radio" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value=custom>
+            <label for="custom">Custom</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </div>
+      <div class="login">
+        <a href="/login">Login</a>
+      </div>
+    </div>
+   
+  </div>
+  
+  <script src="/js/signup.js"></script>
+</body>
+</html>

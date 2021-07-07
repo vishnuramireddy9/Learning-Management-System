@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/task.css">
+  <title>Tasks</title>
+</head>
+<body>
+  <h1>Make Notes</h1>
+  <br>
+  <a href="/tasks/edit" class="new-task">Add Task</a>
+  <div class="task-box">
+    <%for(let i=data.length-1;i>=0;i--){%>
+    <div class="task">
+      <div class="title"><h1><%=data[i].title%></h1> <h4>Completed :<strong><%=data[i].completed%></strong></h4> </div>
+      <div class="deadline">Deadline : <strong><%=data[i].deadline%></strong> </div>
+      <div class="desc"><%=data[i].desc%></div>
+      <div class="options" >
+        <ul >
+          <a href="/tasks/read/<%=data[i]._id%>"><li class="read">Read More</li></a>
+          <a href="/tasks/edit/<%=data[i]._id%>"><li class="edit op">Edit</li></a>
+          <a href="/tasks/<%=data[i]._id%>"><li class="delete op">Delete</li></a>
+        </ul>
+      </div>
+      
+    </div>
+    <%}%>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/task.js"></script>
+</body>
+</html>

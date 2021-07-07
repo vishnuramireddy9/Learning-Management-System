@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans' ,sans-serif;
+  color:black
+}
+
+.new-task{
+  text-decoration: none;
+  background-color: blue;
+  color:whitesmoke;
+  font-size: large;
+  font-weight: 900;
+  padding:0.3rem;
+  border-radius: 0.64rem;
+}
+
+.task-box{
+  position: relative;
+  top:2rem;
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 2rem; */
+}
+.task{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding:0.64rem;
+  gap:0.5rem;
+  box-shadow: 0 0 10px grey;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.options{
+  display: flex;
+  flex-direction: column;
+}
+.options ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap:2rem;
+}
+.options ul  a{
+  text-decoration: none;
+  
+}
+.options ul  li{
+  background-color:blue;
+  color:white;
+  padding :0.3rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+}
+.delete{
+  /* text-decoration: none; */
+  background-color: red;
+}

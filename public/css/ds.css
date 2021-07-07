@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans' ,sans-serif;
+  color:black;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-container{
+  width: 90%;
+  
+}
+.sidepanel{
+  width: 15%;
+  display: fixed;
+  border-right: 1px solid black;
+}
+.item{
+  display: block;
+  padding: 1rem;
+  cursor:pointer;
+}
+.rest{
+  position: absolute;
+  top: 2rem;
+  left: 30%;
+}

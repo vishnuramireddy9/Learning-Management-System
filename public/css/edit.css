@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans' ,sans-serif;
+  color:black;
+}
+
+.edit-box{
+  /* margin: 5rem ; */
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.edit{
+  width: 90%;
+  box-shadow: 0 0 10px grey;
+  padding: 1rem ;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+.edit-form{
+  width: 100%;
+  padding: 1rem ;
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+  font-size: 1.5rem;
+}
+.title-in{
+  /* margin: 0.5rem; */
+  width: 100%;
+  height: 2rem;
+}
+.date-in{
+  width: 45%;
+  height:2rem;
+}
+.desc-in{
+  width: 100%;
+  line-height: 1rem;
+  height: 5rem;
+}
+
+.complete{
+  margin-top: -2rem;
+  font-size: 16px;
+}
+.comp{
+  font-size: 22px;
+}
+
+.comp-in{
+  margin-left: 1.5rem;
+  font-size: 18px;
+}
+.submit-data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.save{
+  background-color: blue;
+  padding: 5px;
+  /* width: %; */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+}

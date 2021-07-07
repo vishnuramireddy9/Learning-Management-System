@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans' ,sans-serif;
+  color:black;
+}
+.cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap-div{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  display: block;
+  width: 90%;
+}
+.courses{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+.item{
+  display: block;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 5px grey;
+}
+
+.item a{
+  list-style: none;
+  text-decoration: none;
+}

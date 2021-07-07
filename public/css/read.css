@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans' ,sans-serif;
+  color:black;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px red;
+  gap:2rem;
+}
