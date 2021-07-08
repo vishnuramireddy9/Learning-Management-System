@@ -10,7 +10,6 @@
 <body>
   <div class="edit-box">
     <div class="edit">
-      <%=data%>
       <form action="/tasks/edit" class="edit-form"method="POST">
           <div class="title">
           <label for="title">Title</label>
@@ -23,7 +22,7 @@
           <br>
           <label for="deadline">Deadline</label>
           <br>
-          <input type="date"  class="date-in"value="<%=data.deadline%>"name="deadline">
+          <input type="date"  class="date-in"value=""name="deadline">
           </div>
           <br>
           <div class="complete">

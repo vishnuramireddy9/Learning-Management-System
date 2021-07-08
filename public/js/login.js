@@ -1,21 +1,17 @@
-var signup= document.querySelector('button')
-var firstname= document.getElementById('first-name')
-var surname=document.getElementById('sur-name')
+var username= document.getElementById('username')
 var password= document.getElementById('password')
-var email= document.getElementById('email')
+var submit= document.querySelector('button')
 
-signup.addEventListener('click',(e)=>{
+submit.addEventListener('click',(e)=>{
   e.preventDefault()
-  fetch('/login/signup',{
+  fetch('/login',{
     method:"POST",
     headers:{
       'Content-Type':"application/json",
       'Accept':"application/json"
     },
     body:JSON.stringify({
-      firstname:firstname.value,
-      surname:surname.value,
-      email:email.value,
+      email:username.value ,
       password:password.value
     })
   }).then((response)=>{

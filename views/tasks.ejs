@@ -12,16 +12,17 @@
   <br>
   <a href="/tasks/edit" class="new-task">Add Task</a>
   <div class="task-box">
-    <%for(let i=data.length-1;i>=0;i--){%>
+    <!-- <%=data.tasks.length%> -->
+    <%for(let i=data.tasks.length-1;i>=0;i--){%>
     <div class="task">
-      <div class="title"><h1><%=data[i].title%></h1> <h4>Completed :<strong><%=data[i].completed%></strong></h4> </div>
-      <div class="deadline">Deadline : <strong><%=data[i].deadline%></strong> </div>
-      <div class="desc"><%=data[i].desc%></div>
+      <div class="title"><h1><%=data.tasks[i].title%></h1> <h4>Completed :<strong><%=data.tasks[i].completed%></strong></h4> </div>
+      <div class="deadline">Deadline : <strong><%=data.tasks[i].deadline%></strong> </div>
+      <div class="desc"><%=data.tasks[i].desc%></div>
       <div class="options" >
         <ul >
-          <a href="/tasks/read/<%=data[i]._id%>"><li class="read">Read More</li></a>
-          <a href="/tasks/edit/<%=data[i]._id%>"><li class="edit op">Edit</li></a>
-          <a href="/tasks/<%=data[i]._id%>"><li class="delete op">Delete</li></a>
+          <a href="/tasks/read/<%=i%>"><li class="read">Read More</li></a>
+          <a href="/tasks/edit/<%=i%>"><li class="edit op">Edit</li></a>
+          <a href="/tasks/<%=i%>"><li class="delete op">Delete</li></a>
         </ul>
       </div>
       
