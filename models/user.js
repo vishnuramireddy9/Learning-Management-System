@@ -1,7 +1,12 @@
 const express= require('express')
 const mongoose= require('mongoose')
 
-mongoose.connect("mongodb://localhost/lms",{
+// mongoose.connect("mongodb://localhost/lms",{
+//   useNewUrlParser:true,
+//   useUnifiedTopology:true 
+// })
+
+mongoose.connect("mongodb+srv://saikumar0204:Sai12345@cluster0.4m8by.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
   useNewUrlParser:true,
   useUnifiedTopology:true 
 })

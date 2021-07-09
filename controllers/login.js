@@ -23,7 +23,7 @@ router.post('/signup',(req,res)=>{
     courses:[{completed:false},{completed:false},{completed:false}]
   })
   newuser.save().then(record=>{
-
+    console.log(record)
     // console.log(record)
     User.findOne({email:req.body.email},(err,data)=>{
       var newTask=data.tasks.push({
