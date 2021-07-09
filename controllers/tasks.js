@@ -23,6 +23,10 @@ var task= mongoose.model('task',TaskSchema)
 
 var userid;
 
+router.get('/add',(req,res)=>{
+  res.render('editnull');
+})
+
 router.get('/:uid/',(req,res)=>{
   userid=req.params.uid;
   console.log(userid)
@@ -43,11 +47,6 @@ router.get('/read/:taskid',(req,res)=>{
   })
 })
 
-//New task
-router.get('/add',(req,res)=>{
-  res.render('editnull');
-})
-
 router.get('/edit/:taskid',(req,res)=>{
   User.findOne({_id:userid},function(err,data){
     if(err) console.log(err)
@@ -61,33 +60,45 @@ router.get('/edit/:taskid',(req,res)=>{
 router.post('/edit',(req,res)=>{
   User.findOne({_id:userid},function(err,users){
     users.tasks.push({
-      title:req.body.title,
+    title:req.body.title,
     deadline:req.body.deadline,
     completed:req.body.completed=="Yes"?true:false,
     desc:req.body.desc
-    }).save().then(()=>{
-      res.redirect('/tasks')})
+    })
+    users.save().then(()=>{
+      res.render('tasks',{data:users})}).catch(err=>{
+        res.send(err)
+      })
   })
-  // var value={
-  //   title:req.body.title,
-  //   deadline:req.body.deadline,
-  //   completed:req.body.completed=="Yes"?true:false,
-  //   desc:req.body.desc
-  // }
-  // var newtask= task(value).save((err,data)=>{
-  //   if(err) console.log(err)
-  //   else   res.redirect('/tasks')
-  // })
 })
 
-router.get('/:uid/:id',(req,res)=>{
-  task.deleteOne({_id:req.params.id})
-  .then(()=>{
-    res.redirect('/tasks')
+router.put('/edit/:id',(req,res)=>{
+  console.log(req.body)
+  User.findOne({_id:userid},(err,data)=>{
+    data.tasks[req.params.id].title=req.body.title;
+    data.tasks[req.params.id].deadline=req.body.deadline
+    data.tasks[req.params.id].completed=req.body.completed=="Yes"?true:false;
+    data.tasks[req.params.id].desc=req.body.desc;
+    data.save().then(()=>{
+      res.render('tasks',{data:users}).catch(err=>{
+        res.send(err)
+      })
+    })
   })
-  .catch((e)=>{
-    console.log("Error is at this point 5")
+})
+
+router.get('/delete/:id',(req,res)=>{
+
+  User.findOne({_id:userid},function(err,data){
+    if(err) console.log(err)
+    if(data.tasks[req.params.id]){
+      data.tasks.splice(req.params.id,1);
+      data.save().then(()=>{
+        res.render('tasks',{data:data})
+      })
+      
+    }
+    else res.send('Something went wrong')
   })
-  
 })
 module.exports={taskroutes:router,userid} 

@@ -10,7 +10,7 @@
 <body>
   <h1>Make Notes</h1>
   <br>
-  <a href="/tasks/edit" class="new-task">Add Task</a>
+  <a href="/tasks/add" class="new-task">Add Task</a>
   <div class="task-box">
     <!-- <%=data.tasks.length%> -->
     <%for(let i=data.tasks.length-1;i>=0;i--){%>
@@ -22,7 +22,7 @@
         <ul >
           <a href="/tasks/read/<%=i%>"><li class="read">Read More</li></a>
           <a href="/tasks/edit/<%=i%>"><li class="edit op">Edit</li></a>
-          <a href="/tasks/<%=i%>"><li class="delete op">Delete</li></a>
+          <a href="/tasks/delete/<%=i%>"><li class="delete op">Delete</li></a>
         </ul>
       </div>
       
