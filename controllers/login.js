@@ -19,7 +19,8 @@ router.post('/signup',(req,res)=>{
     password:req.body.password,
     firstname:req.body.firstname,
     surname:req.body.surname,
-    tasks:[]
+    tasks:[],
+    courses:[{completed:false},{completed:false},{completed:false}]
   })
   newuser.save().then(record=>{
 

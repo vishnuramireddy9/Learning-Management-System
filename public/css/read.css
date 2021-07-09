@@ -4,7 +4,7 @@ body{
   box-sizing: border-box;
   font-family: 'Open Sans' ,sans-serif;
   color:black;
-  background-color: #742f2f;
+  background-color: rgb(139, 139, 180);
 }
 .container{
   display: flex;

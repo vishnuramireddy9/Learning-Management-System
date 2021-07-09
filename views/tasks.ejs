@@ -8,7 +8,18 @@
   <title>Tasks</title>
 </head>
 <body>
-  <h1>Make Notes</h1>
+  <header>
+    <div class="tasks">
+      <ul>
+       <li><a href="/tasks/<%=data._id%>">Tasks</a></li> 
+      <li><a href="/home/dashboard/<%=data._id%>">Dashboard</a></li> 
+      <li><a href="/courses/<%=data._id%>">Courses</a></li>  
+      </ul>  
+    </div>
+    <div class="logout"><a href="/">Logout</a></div>
+  </header>
+  <div class="main">
+    <h1>Make Notes</h1>
   <br>
   <a href="/tasks/add" class="new-task">Add Task</a>
   <div class="task-box">
@@ -29,6 +40,8 @@
     </div>
     <%}%>
   </div>
+  </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/js/task.js"></script>
 </body>

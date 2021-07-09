@@ -17,12 +17,17 @@ var TaskSchema  =new mongoose.Schema({
   completed:Boolean
 })
 
+var CourseSchema= new mongoose.Schema({
+  completed:Boolean
+})
+
 var userSchema= new mongoose.Schema({
   email:String,
   firstname:String,
   surname:String,
   password:String,
-  tasks:[TaskSchema]
+  tasks:[TaskSchema],
+  courses:[CourseSchema]
 })
 
 var User=mongoose.model('user',userSchema)

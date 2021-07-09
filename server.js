@@ -1,7 +1,7 @@
 const express= require('express')
 const app= express()
 
-const port= process.env.PORT||3000
+const port= process.env.PORT||4000
 
 app.use(express.static('./public'))
 app.set('view engine','ejs')
@@ -13,9 +13,6 @@ var {taskroutes,userid}= require('./controllers/tasks')
 var courseroutes= require('./controllers/courses')
 var {loginroutes,uid}= require('./controllers/login')
 
-app.get('/tasks/edit',(req,res)=>{
-  res.render('edittask')
-})
 
 app.use('/login',loginroutes)
 app.use('/courses',courseroutes)
@@ -26,6 +23,7 @@ app.use('/tasks',taskroutes)
 app.get('/',(req,res)=>{
   res.render('login')
 })
+
 
 app.listen(port,()=>{
   console.log(`server is running on ${port}`);
