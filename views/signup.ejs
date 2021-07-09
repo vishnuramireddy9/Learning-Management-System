@@ -30,6 +30,7 @@
           <input type="password" id="password" placeholder="New Password">
         </div>
         <div class="dob">
+          Date of birth:
           <div class="day">
             <select name="day" id="day">
               <%for(let i=1;i<=31;i++){%>
@@ -60,17 +61,18 @@
               <%}%>
             </select>
           </div>
-          <div class="gender">
-            <label for="gender">Gender</label>
-            <input type="radio" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" name="gender" value="female">
-            <label for="female">Female</label>
-            <input type="radio" name="gender" value=custom>
-            <label for="custom">Custom</label>
-          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign up</button>
+          <div id="gender" class="gender">
+            <label for="gender" class="gender">Gender</label>
+            <input type="radio" name="gender" value="male" >
+            <label for="male"class="gender">Male</label>
+            <input type="radio" name="gender" value="female">
+            <label for="female" class="gender">Female</label>
+            <input type="radio" name="gender" value=custom>
+            <label for="custom" class="gender">Custom</label>
+          </div>
+        
+        <button type="submit"  class="btn btn-primary">Sign up</button>
       </div>
       <div class="login">
         <a href="/login">Login</a>
