@@ -42,6 +42,8 @@ router.post('/signup',(req,res)=>{
 router.post('/',(req,res)=>{
   console.log(req.body)
   User.findOne({email:req.body.email},(err,record)=>{
+    if(err) res.json("User name or id is invalid")
+    if(record.password==null) res.json("User doesnot exist or Email id is username")
     if(record.password==req.body.password){
       // console.log(record)
       uid=record._id;
