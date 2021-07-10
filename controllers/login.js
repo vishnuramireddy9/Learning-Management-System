@@ -13,11 +13,11 @@ router.get('/signup',(req,res)=>{
 })
 
 router.post('/signup',(req,res)=>{
-  if(req.body.email==''||!req.body.email) res.status(404).json('Please enter email')
-  if(req.body.password==''||!req.body.password) res.status(404).json('Please enter password')
+  if(!req.body.email||req.body.email=='') res.status(404).json('Please enter email')
+  if(!req.body.password||req.body.password=='') res.status(404).json('Please enter password')
   User.findOne({email:req.body.email},(err,data)=>{
     if(!data) console.log('Fine user doesnt exist , create new account')
-    else res.json('User already exist, Please login')
+    else res.status(404).json('User already exist, Please login')
   })
   // console.log(req.body)
   var newuser= new User({
@@ -39,6 +39,9 @@ router.post('/signup',(req,res)=>{
       data.save().then(response=>{
         // console.log(response)
         res.redirect('/login')
+      })
+      .catch(err=>{
+        res.status(404).json(err)
       })
     })
     
