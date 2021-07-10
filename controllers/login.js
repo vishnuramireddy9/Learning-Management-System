@@ -13,6 +13,12 @@ router.get('/signup',(req,res)=>{
 })
 
 router.post('/signup',(req,res)=>{
+  if(req.body.email==''||!req.body.email) res.json('Please enter email')
+  if(req.body.password==''||!req.body.password) res.json('Please enter password')
+  User.findOne({email:req.body.email},(err,data)=>{
+    if(!data) console.log('Fine user doesnt exist , create new account')
+    else res.json('User already exist, Please login')
+  })
   // console.log(req.body)
   var newuser= new User({
     email:req.body.email,
@@ -22,6 +28,7 @@ router.post('/signup',(req,res)=>{
     tasks:[],
     courses:[{completed:false},{completed:false},{completed:false}]
   })
+
   newuser.save().then(record=>{
     console.log(record)
     // console.log(record)
@@ -42,15 +49,15 @@ router.post('/signup',(req,res)=>{
 router.post('/',(req,res)=>{
   console.log(req.body)
   User.findOne({email:req.body.email},( err,record)=>{
-    if(err) res.json("User name or id is invalid")
-    if(!record) res.json("User doesnot exist or Email id is username")
+    if(err) res.json("Email or password is invalid")
+    if(!record) res.json("User doesnot exist,Please create new account")
     if(record.password==req.body.password){
       // console.log(record)
       uid=record._id;
       res.redirect('/login/home')
     }
     
-    else res.json("User name or id is invalid")
+    else res.json("Email or password is invalid")
   })
 })
 

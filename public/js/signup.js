@@ -3,6 +3,7 @@ var firstname= document.getElementById('first-name')
 var surname=document.getElementById('sur-name')
 var password= document.getElementById('password')
 var email= document.getElementById('email')
+var msg= document.querySelector('.msg')
 
 signup.addEventListener('click',(e)=>{
   e.preventDefault()
@@ -21,6 +22,11 @@ signup.addEventListener('click',(e)=>{
   }).then((response)=>{
     if(response.redirected){
       window.location.href = response.url;
+    }
+    else{
+      response.json().then((data)=>{
+        msg.innerText=data
+      })
     }
   })
 })

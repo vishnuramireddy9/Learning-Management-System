@@ -57,6 +57,14 @@ header{
   padding: 0.5rem;
 }
 
+.msgdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.msg{
+  color: white;
+}
 
 body{
   background-image: linear-gradient(to right, #9863b3, purple);
