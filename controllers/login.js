@@ -48,7 +48,7 @@ router.post('/',(req,res)=>{
       res.redirect('/login/home')
     }
     
-    else res.redirect('/')
+    else res.json("User name or id is invalid")
   })
 })
 

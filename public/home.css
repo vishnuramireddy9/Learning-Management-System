@@ -45,19 +45,42 @@
   position: absolute;
   top: 4.5rem;
   width: 100%;
+  /* display: flex;
+  flex-direction: column;
+  gap: 1rem; */
 }
-.view{
-  /* background-image: url(https://s3.amazonaws.com/coursera-university-assets/program-assets/shared/jumbotron_bg.png); */
-  width: 100%;
+.imagebox{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* box-shadow: 0 0 5px grey; */
 }
-.home-img{
+.view{
+  position: relative;
   width: 90%;
   height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  background-image: url(./home_image.png);
+  object-fit: cover;
+  padding: 0.5rem;
 }
+.textbox{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  border: 2px solid white;
+  text-align: center;
+}
+
 /* controllers */
 .list{
   padding: 1rem;
@@ -65,6 +88,7 @@
   display: flex;
   justify-content: center;
   gap: 10rem;
+  font-weight: bolder;
   align-items: center;
   /* box-shadow: 0 0 5px grey; */
 }
@@ -73,5 +97,15 @@
   display: block;
   color:white;
   padding: 0.64rem;
+  border-radius: 0.5rem;
   background-color: blue;
+}
+.abouttext{
+  padding: 0.5rem;
+}
+
+@media(max-width:600px){
+  .list{
+    gap: 2rem;
+  }
 }

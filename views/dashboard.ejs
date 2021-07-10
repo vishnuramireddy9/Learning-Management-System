@@ -8,74 +8,78 @@
   <title>Dashboard</title>
 </head>
 <body>
-  <div class="temp">
-    <div class="cover">
-      <div class="head">
-        <div class="signup">Dashboard</div>
-      </div>
-      <div class="container">
-        <div class="name">
-          <div class="first">
-            <input type="text" id="first-name" placeholder="First Name" value="<%=data.firstname%>">
-          </div>
-          <div class="last">
-            <input type="text" id="sur-name" placeholder="SurName" value="<%=data.surname%>">
-          </div>
+  <%-include('partials/header')%>
+  <div class="main">
+    <div class="temp">
+      <div class="cover">
+        <div class="head">
+          <div class="signup">Dashboard</div>
         </div>
-        <div class="email">
-          <input type="text" id="email"placeholder="Email Address" value="<%=data.email%>">
+        <div class="container">
+          <div class="name">
+            <div class="first">
+              <input type="text" id="first-name" placeholder="First Name" value="<%=data.firstname%>">
+            </div>
+            <div class="last">
+              <input type="text" id="sur-name" placeholder="SurName" value="<%=data.surname%>">
+            </div>
+          </div>
+          <div class="email">
+            <input type="text" id="email"placeholder="Email Address" value="<%=data.email%>">
+          </div>
+          <div class="password">
+            <input type="password" id="password" placeholder="New Password">
+          </div>
+          <div class="dob">
+            Date of Birth:
+            <div class="day">
+              <select name="day" id="day">
+                <%for(let i=1;i<=31;i++){%>
+                <option value="<%=i%>"><%=i%></option>
+                <%}%>
+              </select>
+            </div>
+            <div class="month">
+              <select name="Month" id="month">
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="Jun">Jun</option>
+                <option value="Jul">Jul</option>
+                <option value="Aug">Aug</option>
+                <option value="Sep">Sep</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
+              </select>
+            </div>
+            <div class="year">
+              <select name="year" id="year">
+                <%for(let i=2021;i>=1990;i--){%>
+                <option value="<%=i%>"><%=i%></option>
+                <%}%>
+              </select>
+            </div>
+          </div>
+            <br>
+            <div class="gender" id="gender">
+              <label for="gender" class="gender">Gender</label>
+              <input type="radio" name="gender" value="male">
+              <label for="male" class="gender">Male</label>
+              <input type="radio" name="gender" value="female">
+              <label for="female" class="gender">Female</label>
+              <input type="radio" name="gender" value=custom>
+              <label for="custom" class="gender">Custom</label>
+            </div>
+          
+          <button type="submit" id="update" class="btn btn-primary">Update</button>
         </div>
-        <div class="password">
-          <input type="password" id="password" placeholder="New Password">
-        </div>
-        <div class="dob">
-          Date of Birth:
-          <div class="day">
-            <select name="day" id="day">
-              <%for(let i=1;i<=31;i++){%>
-              <option value="<%=i%>"><%=i%></option>
-              <%}%>
-            </select>
-          </div>
-          <div class="month">
-            <select name="Month" id="month">
-              <option value="Jan">Jan</option>
-              <option value="Feb">Feb</option>
-              <option value="Mar">Mar</option>
-              <option value="Apr">Apr</option>
-              <option value="May">May</option>
-              <option value="Jun">Jun</option>
-              <option value="Jul">Jul</option>
-              <option value="Aug">Aug</option>
-              <option value="Sep">Sep</option>
-              <option value="Oct">Oct</option>
-              <option value="Nov">Nov</option>
-              <option value="Dec">Dec</option>
-            </select>
-          </div>
-          <div class="year">
-            <select name="year" id="year">
-              <%for(let i=2021;i>=1990;i--){%>
-              <option value="<%=i%>"><%=i%></option>
-              <%}%>
-            </select>
-          </div>
-        </div>
-          <br>
-          <div class="gender" id="gender">
-            <label for="gender" class="gender">Gender</label>
-            <input type="radio" name="gender" value="male">
-            <label for="male" class="gender">Male</label>
-            <input type="radio" name="gender" value="female">
-            <label for="female" class="gender">Female</label>
-            <input type="radio" name="gender" value=custom>
-            <label for="custom" class="gender">Custom</label>
-          </div>
-        
-        <button type="submit" id="update" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>
+ 
   
   <script src="/js/dashboard.js"></script>
 </body>
