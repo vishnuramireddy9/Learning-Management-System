@@ -17,9 +17,9 @@ router.post('/signup',(req,res)=>{
   if(!req.body.password||req.body.password=='') return res.status(404).json('Please enter password')
   User.findOne({email:req.body.email}).then((data)=>{
     if(!data) console.log('Fine user doesnt exist , create new account')
-    else return res.status(404).json('User already exist, Please login')
+    else return res.status(404).json('User already exist, Please login1')
   }).catch(err=>{
-    return res.status(404).json('User already exist, Please login')
+    return res.status(404).json('User already exist, Please login2')
   })
   // console.log(req.body)
   var newuser= new User({
