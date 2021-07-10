@@ -49,14 +49,13 @@ router.post('/signup',(req,res)=>{
 router.post('/',(req,res)=>{
   console.log(req.body)
   User.findOne({email:req.body.email},( err,record)=>{
-    if(err) res.json("Email or password is invalid")
-    if(!record) res.json("User doesnot exist,Please create new account")
-    if(record.password==req.body.password){
+    if(err) res.json("Email or password is invalid");
+    if(!record||!record.password) res.json("User doesnot exist,Please create new account");
+    if(record&&record.password==req.body.password){
       // console.log(record)
       uid=record._id;
       res.redirect('/login/home')
     }
-    
     else res.json("Email or password is invalid")
   })
 })
