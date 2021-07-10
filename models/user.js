@@ -5,6 +5,7 @@ const mongoose= require('mongoose')
 //   useNewUrlParser:true,
 //   useUnifiedTopology:true 
 // })
+mongoose.Promise=global.Promise
 
 mongoose.connect("mongodb+srv://saikumar0204:Sai12345@cluster0.4m8by.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
   useNewUrlParser:true,
