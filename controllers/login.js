@@ -37,19 +37,19 @@ router.post('/signup',(req,res)=>{
 
   newuser.save().then(record=>{
     console.log(record)
-    // console.log(record)
-    User.findOne({email:req.body.email}.then((data)=>{
-      var newTask=data.tasks.push({
-        title:"Template",desc:"description",deadline:"21-May-2020",completed:false
-      })
-      data.save().then(response=>{
-        // console.log(response)
-        res.redirect('/login')
-      })
-      .catch(err=>{
-        return res.status(404).json(err)
-      })
-    }))
+    
+    // User.findOne({email:req.body.email}.then((data)=>{
+    //   var newTask=data.tasks.push({
+    //     title:"Template",desc:"description",deadline:"21-May-2020",completed:false
+    //   })
+    //   data.save().then(response=>{
+    //     // console.log(response)
+    //     res.redirect('/login')
+    //   })
+    //   .catch(err=>{
+    //     return res.status(404).json(err)
+    //   })
+    // }))
     
   }).catch(err=>{
     res.status(404).json('Some error occured')
