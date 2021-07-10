@@ -13,8 +13,8 @@ router.get('/signup',(req,res)=>{
 })
 
 router.post('/signup',(req,res)=>{
-  if(req.body.email==''||!req.body.email) res.json('Please enter email')
-  if(req.body.password==''||!req.body.password) res.json('Please enter password')
+  if(req.body.email==''||!req.body.email) res.status(404).json('Please enter email')
+  if(req.body.password==''||!req.body.password) res.status(404).json('Please enter password')
   User.findOne({email:req.body.email},(err,data)=>{
     if(!data) console.log('Fine user doesnt exist , create new account')
     else res.json('User already exist, Please login')
@@ -49,14 +49,14 @@ router.post('/signup',(req,res)=>{
 router.post('/',(req,res)=>{
   console.log(req.body)
   User.findOne({email:req.body.email},( err,record)=>{
-    if(err) res.json("Email or password is invalid");
-    if(!record||!record.password) res.json("User doesnot exist,Please create new account");
-    if(record&&record.password==req.body.password){
+    if(err) return res.status(404).json("Email or password is invalid");
+    if(!record||!record.password) return res.status(404).json("User doesnot exist,Please create new account");
+    if(record&&record.password&&record.password==req.body.password){
       // console.log(record)
       uid=record._id;
       res.redirect('/login/home')
     }
-    else res.json("Email or password is invalid")
+    else return res.status(404).json("Email or password is invalid")
   })
 })
 
