@@ -50,7 +50,7 @@ router.post('/signup',(req,res)=>{
     //     return res.status(404).json(err)
     //   })
     // }))
-    
+    res.redirect('/login')
   }).catch(err=>{
     res.status(404).json('Some error occured')
   })
