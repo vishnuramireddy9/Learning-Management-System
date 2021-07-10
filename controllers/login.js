@@ -5,7 +5,7 @@ var User= require('../models/user')
 
 var uid;
 router.get('/',(req,res)=>{
-  res.render('login')
+  res.status(200).render('login')
 })
 
 router.get('/signup',(req,res)=>{
@@ -18,7 +18,7 @@ router.post('/signup',(req,res)=>{
   User.findOne({email:req.body.email}).then((data)=>{
     if(!data) console.log('Fine user doesnt exist , create new account')
     else {
-      return res.status(404).json('User already exist, Please login1');
+      return res.status(200).json('User already exist, Please login1');
       res.end();
     }
   }).catch(err=>{
@@ -38,7 +38,7 @@ router.post('/signup',(req,res)=>{
   newuser.save().then(record=>{
     console.log(record)
     // console.log(record)
-    User.findOne({email:req.body.email},(err,data)=>{
+    User.findOne({email:req.body.email}.then((data)=>{
       var newTask=data.tasks.push({
         title:"Template",desc:"description",deadline:"21-May-2020",completed:false
       })
@@ -49,7 +49,7 @@ router.post('/signup',(req,res)=>{
       .catch(err=>{
         return res.status(404).json(err)
       })
-    })
+    }))
     
   }).catch(err=>{
     res.status(404).json('Some error occured')
