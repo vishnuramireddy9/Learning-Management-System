@@ -6,7 +6,7 @@ var userid;
 
 var flag1=0;
 var flag2=0;
-var flag2=0;
+var flag3=0;
 router.get('/course1',(req,res)=>{
   res.render('course1_new',{flag:flag1})
 })
