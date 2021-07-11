@@ -1,7 +1,7 @@
 const express= require('express')
 const app= express()
 
-const port= process.env.PORT||3000;
+const port= process.env.PORT||80;
 // const ExpressError = require('utils/ExpressError');
 const cors =require('cors')
 
