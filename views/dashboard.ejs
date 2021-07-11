@@ -65,12 +65,25 @@
           </div>
             <br>
             <div class="gender" id="gender">
+
               <label for="gender" class="gender">Gender</label>
-              <input type="radio" name="gender" value="male">
+              <%if(data.gender=='male'){%>
+                <input type="radio" name="gender" value="male" checked>
+              <%}else{%>
+                <input type="radio" name="gender" value="male" >
+              <%}%>
               <label for="male" class="gender">Male</label>
-              <input type="radio" name="gender" value="female">
+              <%if(data.gender=='female'){%>
+                <input type="radio" name="gender" value="female" checked>
+              <%}else{%>
+                <input type="radio" name="gender" value="female" >
+              <%}%>
               <label for="female" class="gender">Female</label>
-              <input type="radio" name="gender" value=custom>
+              <%if(data.gender=='custom'){%>
+                <input type="radio" name="gender" value="custom" checked>
+              <%}else{%>
+                <input type="radio" name="gender" value="custom" >
+              <%}%>
               <label for="custom" class="gender">Custom</label>
             </div>
           

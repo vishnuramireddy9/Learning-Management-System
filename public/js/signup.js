@@ -3,10 +3,24 @@ var firstname= document.getElementById('first-name')
 var surname=document.getElementById('sur-name')
 var password= document.getElementById('password')
 var email= document.getElementById('email')
+// var day=document.getElementById('day')
+// console.log(day.options[day.selectedIndex].value);
+// console.log(day.options[day.selectedIndex].text);
+// var gender= document.querySelector('')
+// console.log("Gender.value",gender)
 var msg= document.querySelector('.msg')
+
+
 
 signup.addEventListener('click',(e)=>{
   e.preventDefault()
+  var ele=document.getElementsByName('gender')
+
+  var gender="Male";
+  for(let i=0;i<ele.length;i++){
+    if(ele[i].checked)
+      gender=ele[i].value
+  }
   fetch('/login/signup',{
     method:"POST",
     headers:{
@@ -17,7 +31,9 @@ signup.addEventListener('click',(e)=>{
       firstname:firstname.value,
       surname:surname.value,
       email:email.value,
-      password:password.value
+      password:password.value,
+      gender:gender
+      // day:day.value
     })
   }).then((response)=>{
     if(response.redirected){

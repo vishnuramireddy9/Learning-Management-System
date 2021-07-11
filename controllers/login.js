@@ -14,6 +14,7 @@ router.get('/signup',(req,res)=>{
 })
 
 router.post('/signup',(req,res)=>{
+  console.log(req.body);
   if(!req.body.email||req.body.email=='') return res.status(404).json('Please enter email')
   if(!req.body.password||req.body.password=='') return res.status(404).json('Please enter password')
   User.findOne({email:req.body.email}).then((data)=>{
@@ -32,6 +33,7 @@ router.post('/signup',(req,res)=>{
     password:req.body.password,
     firstname:req.body.firstname,
     surname:req.body.surname,
+    gender:req.body.gender,
     tasks:[],
     courses:[{completed:false},{completed:false},{completed:false}]
   })

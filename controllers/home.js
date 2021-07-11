@@ -13,6 +13,7 @@ router.post('/dashboard/',(req,res)=>{
       data.password= req.body.password;
     data.firstname=req.body.firstname
     data.surname= req.body.surname
+    data.gender=req.body.gender
     data.save().then(()=>{
       // console.log('reached till now')
       res.redirect('/login/home');

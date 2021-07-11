@@ -9,6 +9,13 @@ console.log(1);
 update.addEventListener('click',(e)=>{
   console.log('reached update event listener')
   e.preventDefault()
+  var ele=document.getElementsByName('gender')
+
+  var gender="Male";
+  for(let i=0;i<ele.length;i++){
+    if(ele[i].checked)
+      gender=ele[i].value
+  }
   fetch('/home/dashboard/',{
     method:"POST",
     headers:{
@@ -19,7 +26,8 @@ update.addEventListener('click',(e)=>{
       firstname:firstname.value,
       surname:surname.value,
       email:email.value,
-      password:password.value
+      password:password.value,
+      gender:gender
     })
   }).then((response)=>{
     if(response.redirected){
