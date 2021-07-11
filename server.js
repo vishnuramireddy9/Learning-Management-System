@@ -2,6 +2,7 @@ const express= require('express')
 const app= express()
 
 const port= process.env.PORT||80;
+// const ExpressError = require('utils/ExpressError');
 const cors =require('cors')
 
 app.use(cors())
@@ -26,6 +27,10 @@ app.get('/',(req,res)=>{
   res.render('login')
 })
 
+
+// app.all('*', (req, res, next) => {
+//   next(new ExpressError('Page Not Found', 404))
+// })
 
 app.listen(port,()=>{
   console.log(`server is running on ${port}`);
