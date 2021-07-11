@@ -34,6 +34,7 @@ var userSchema= new mongoose.Schema({
   password:String,
   image:String,
   gender:String,
+  contact:String,
   tasks:[TaskSchema],
   courses:[CourseSchema]
 })

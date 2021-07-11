@@ -10,7 +10,7 @@ var email= document.getElementById('email')
 // console.log("Gender.value",gender)
 var msg= document.querySelector('.msg')
 
-
+var contact= document.getElementById('contact')
 
 signup.addEventListener('click',(e)=>{
   e.preventDefault()
@@ -32,7 +32,8 @@ signup.addEventListener('click',(e)=>{
       surname:surname.value,
       email:email.value,
       password:password.value,
-      gender:gender
+      gender:gender,
+      contact:contact.value
       // day:day.value
     })
   }).then((response)=>{

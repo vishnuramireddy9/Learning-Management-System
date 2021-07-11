@@ -5,7 +5,7 @@ var password= document.getElementById('password')
 var email= document.getElementById('email')
 
 console.log(1);
-
+var contact= document.getElementById('contact')
 update.addEventListener('click',(e)=>{
   console.log('reached update event listener')
   e.preventDefault()
@@ -27,7 +27,8 @@ update.addEventListener('click',(e)=>{
       surname:surname.value,
       email:email.value,
       password:password.value,
-      gender:gender
+      gender:gender,
+      contact:contact.value
     })
   }).then((response)=>{
     if(response.redirected){

@@ -34,6 +34,7 @@ router.post('/signup',(req,res)=>{
     firstname:req.body.firstname,
     surname:req.body.surname,
     gender:req.body.gender,
+    contact:req.body.contact,
     tasks:[],
     courses:[{completed:false},{completed:false},{completed:false}]
   })
