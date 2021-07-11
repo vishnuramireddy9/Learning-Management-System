@@ -99,7 +99,9 @@ img{
   width: 40%;
   height: 40%;
   font-size: x-large;
+  border-radius: 0.5rem;
   font-weight: 900;
+  background-image: linear-gradient(to right,purple,pink,white)
 }
 .item{
   display: flex;

@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(to bottom,purple,pink,white)
 }
 .t2{
   display: block;
@@ -17,6 +18,7 @@
   width: 90%;
   padding: 1rem;
   box-shadow: 0 0 5px grey;
+  
 }
 .container{
   display: flex;
@@ -29,6 +31,8 @@
 iframe{
   width: 600px;
   height: 300px;
+  box-shadow: 0 0 5px grey;
+  border-radius: 0.5rem;
 }
 
 .mark a{
@@ -39,6 +43,11 @@ iframe{
   padding: 0.5rem;
   font-weight: 900;
   border-radius: 0.5rem;
+}
+h4{
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
 }
 
 @media(max-width:650px){
