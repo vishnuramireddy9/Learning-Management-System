@@ -5,11 +5,15 @@
   box-sizing: border-box;
 }
 body{
-  
+
   box-sizing: border-box;
   font-family: 'Open Sans' ,sans-serif;
   color:black;
-  background-color: rgb(139, 139, 180);
+  background-color: beige;
+  background: white;
+  /* background-image: linear-gradient(to bottom,white,purple); */
+
+
 }
 .container{
   display: flex;
@@ -19,9 +23,11 @@ body{
   margin-right: 20%;
   flex-direction: column;
   /* box-shadow: 0 0 5px red; */
-  border-radius: 5%;
+  border-radius: 30px;
   gap:2rem;
-  background-color: rgb(179, 153, 153);
+  /* background-color: white; */
+  background-image: linear-gradient(to right,pink,white);
+ box-shadow: 0 10px 10px grey;
 }
 
 .title{

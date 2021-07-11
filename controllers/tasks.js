@@ -3,23 +3,6 @@ var router= express.Router()
 var mongoose = require('mongoose')
 var moment = require('moment')
 var User= require('../models/user')
-// mongoose.connect("mongodb://localhost/ufff",{
-//   useNewUrlParser:true,
-//   useUnifiedTopology:true 
-// })
-
-// mongoose.connection.on("connected",()=>{
-//   console.log("connnected to mongoose");
-// })
-
-var TaskSchema= new mongoose.Schema({
-  title:String,
-  desc:String,
-  deadline:String,
-  completed:Boolean
-})
-
-var task= mongoose.model('task',TaskSchema)
 
 var userid;
 
@@ -72,18 +55,30 @@ router.post('/edit',(req,res)=>{
   })
 })
 
-router.put('/edit/:id',(req,res)=>{
+router.post('/editold/',(req,res)=>{
   console.log(req.body)
   User.findOne({_id:userid},(err,data)=>{
-    data.tasks[req.params.id].title=req.body.title;
-    data.tasks[req.params.id].deadline=req.body.deadline
-    data.tasks[req.params.id].completed=req.body.completed=="Yes"?true:false;
-    data.tasks[req.params.id].desc=req.body.desc;
-    data.save().then(()=>{
-      res.render('tasks',{data:users}).catch(err=>{
-        res.send(err)
-      })
+    // data.tasks[req.params.id].title=req.body.title;
+    // res.send(data)
+    data.tasks.findOne({titile:req.body.title},(err,record)=>{
+      record.deadline=req.body.deadline;
+      record.completed= req.body.completed=="Yes"?true:false;
+      record.desc=req.body.desc;
+      data.save().then(()=>{
+          res.render('tasks',{data:data})
+          }).catch(err=>{
+            res.send(err)
+        })
     })
+
+    // data.tasks[req.params.id].deadline=req.body.deadline
+    // data.tasks[req.params.id].completed=req.body.completed=="Yes"?true:false;
+    // data.tasks[req.params.id].desc=req.body.desc;
+    // data.save().then(()=>{
+    //   res.render('tasks',{data:users})
+    //   }).catch(err=>{
+    //     res.send(err)
+    // })
   })
 })
 

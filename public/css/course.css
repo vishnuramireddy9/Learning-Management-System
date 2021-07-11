@@ -32,21 +32,25 @@ header{
   text-decoration: none;
   display: inline-block;
   padding: 0.3rem;
-  background-color: blue;
+  background-image: linear-gradient(to right, purple,pink);
+  box-shadow: 0 5px 0 grey;
+  /* background-color: blue; */
   border-radius: 0.7rem;
   color: white;
   font-size: 22px;
   font-weight: 1200;
 }
 .logout a
-{ 
+{
   text-decoration: none;
   display: inline-block;
   color: white;
   font-size: 22px;
   font-weight: 1200;
   padding: 0.3rem;
-  background-color: blue;
+  /* background-color: blue */
+  background-image: linear-gradient(to right, purple,pink);
+  box-shadow: 0 5px 0 grey;
   border-radius: 0.7rem;
 }
 
@@ -87,16 +91,61 @@ img{
   flex-wrap: wrap;
   padding: 2rem;
 }
-.item{
+.wrap-course{
   display: block;
   padding: 2rem;
   background-color: white;
   box-shadow: 0 0 5px grey;
   width: 40%;
   height: 40%;
+  font-size: x-large;
+  font-weight: 900;
+}
+.item{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .item a{
   list-style: none;
   text-decoration: none;
+}
+.imagewrap{
+  display:flex;
+  justify-content: center;
+}
+.image{
+  display: block;
+  width: 100%;
+}
+
+@media(max-width:550px){
+  .tasks ul{
+    gap: 0.2rem;
+  }
+  .tasks ul li a{
+    padding: 0.1rem;
+    font-size: 18px;
+  }
+  .logout a{
+    padding: 0.1rem;
+    font-size: 18px;
+  }
+  header{
+    height: 4rem;
+  }
+  .main{
+    top: 4rem;
+  }
+  .courses{
+    padding: 0rem;
+  }
+  .wrap-course{
+    padding: 1rem;
+    width: 90%;
+  }
 }

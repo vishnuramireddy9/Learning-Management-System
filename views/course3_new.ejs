@@ -16,7 +16,13 @@
           <iframe width="560" height="315" id="video3" src="https://www.youtube.com/embed/PkZNo7MFNFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="mark">
-          <a href="/courses/course3/update/">Mark as Completed</a>
+          <a href="/courses/course3/update/"><h4>
+            <%if(flag==1){%>
+              Mark as Completed
+            <%}else {%>
+              Completed
+              <%}%>
+          </h4></a>
         </div>
         <div class="about">
           Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. Over 97% of websites use it client-side for web page behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on the user's device.

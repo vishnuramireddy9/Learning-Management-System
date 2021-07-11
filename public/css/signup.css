@@ -32,21 +32,25 @@ header{
   text-decoration: none;
   display: inline-block;
   padding: 0.3rem;
-  background-color: blue;
+  /* background-color: blue; */
+  background-image: linear-gradient(to right, purple,pink);
+  box-shadow: 0 5px 0 grey;
   border-radius: 0.7rem;
   color: white;
   font-size: 22px;
   font-weight: 1200;
 }
 .logout a
-{ 
+{
   text-decoration: none;
   display: inline-block;
   color: white;
   font-size: 22px;
   font-weight: 1200;
   padding: 0.3rem;
-  background-color: blue;
+  /* background-color: blue; */
+  background-image: linear-gradient(to right, purple,pink);
+  box-shadow: 0 5px 0 grey;
   border-radius: 0.7rem;
 }
 
@@ -65,10 +69,10 @@ header{
 .msg{
   color: white;
 }
-
+/*
 body{
   background-image: linear-gradient(to right, #9863b3, purple);
-}
+} */
 .temp{
   display: flex;
   flex-direction: column;
@@ -79,8 +83,7 @@ body{
 }
 .cover{
   display: block;
-  width: 50%;
-
+  width: 60%;
 }
 .head{
   display: flex;
@@ -100,7 +103,9 @@ body{
 }
 
 .container{
-background-image: linear-gradient(to right,#6f537c,purple);
+  background-image: linear-gradient(to right, purple,pink);
+  box-shadow: 0 5px 5px grey;
+/* background-image: linear-gradient(to right,#6f537c,purple); */
 /* max-width: 800px; */
 border-radius: 50px;
 height: 350px;
@@ -137,9 +142,12 @@ margin-top: 10px;
 button{
   width: 20%;
   /* height: 30px; */
-  margin-top: 10px;
+  margin-top: 10px ;
   padding: 10px;
   border-radius: 10px;
+  font-size: large;
+  font-weight: 900;
+  
 }
 .login{
   margin-bottom: 180px;
@@ -179,4 +187,30 @@ button{
   color: whitesmoke;
   padding: 5px;
   border-radius: 0.3rem;
+}
+
+@media(max-width:550px){
+  .tasks ul{
+    gap: 0.2rem;
+  }
+  .tasks ul li a{
+    padding: 0.1rem;
+    font-size: 18px;
+  }
+  .logout a{
+    padding: 0.1rem;
+    font-size: 18px;
+  }
+  header{
+    height: 4rem;
+  }
+  .main{
+    top: 4rem;
+  }
+  .cover{
+    width: 90%;
+  }
+  button{
+    width: 40%;
+  }
 }

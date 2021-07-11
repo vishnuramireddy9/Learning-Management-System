@@ -26,6 +26,7 @@ h1{
 .left{
   display: block;
   width: 100%;
+  text-align: center;
   /* box-shadow: 0 0 5px grey; */
 }
 .right{
@@ -95,6 +96,16 @@ a{
 @media(max-width:600px){
   .container{
     flex-direction: column;
-    gap: 10rem;
+    gap: 6rem;
+    padding: 1rem;
   }
+  .rc{
+    padding: 1rem;
+  }
+  input{
+    width: 120%;
+  }button{
+    width: 120%;
+  }
+
 }
