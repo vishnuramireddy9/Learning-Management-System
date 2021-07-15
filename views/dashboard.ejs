@@ -10,12 +10,29 @@
 <body>
   <%-include('partials/header')%>
   <div class="main">
+    <%if(data.image){%>
+    <div class="imagediv2">
+      
+        <div class="imagewrap2"><img src="/uploads/<%=data.image%>" alt=""></div>
+      <div class="imagetext2">Profile picture</div>
+      
+      
+    </div>
+    <%}%>
     <div class="temp">
       <div class="cover">
         <div class="head">
           <div class="signup">Dashboard</div>
         </div>
         <div class="container">
+          <%if(data.image){%>
+          <div class="imagediv">
+           
+            <div class="imagewrap"><img src="/uploads/<%=data.image%>" alt=""></div>
+            <div class="imagetext">Profile picture</div>
+          
+          </div>
+          <%}%>
           <div class="name">
             <div class="first">
               <input type="text" id="first-name" placeholder="First Name" value="<%=data.firstname%>">

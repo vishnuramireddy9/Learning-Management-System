@@ -53,12 +53,42 @@ header{
   box-shadow: 0 5px 0 grey;
   border-radius: 0.7rem;
 }
-
+/* .imagediv{
+  width: 10px;
+  height: 10px;
+} */
+img{
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 5px purple;
+  position: relative;
+  /* top: 5rem; */
+  /* left: 20%; */
+}
+.imagediv{
+  width: 25%;
+  display: flex;
+  float: right;
+  /* justify-content: flex-end; */
+  height: 100%;
+  flex-direction: column;
+  margin-top: 1rem;
+  /* text-align: center; background-color: grey;
+  color: aqua; */
+}
+.imagetext{
+  background-color: grey;
+  color: aqua;
+}
+.imagediv2{
+  display: none;
+}
 .main{
   position: relative;
   top: 4.5rem;
   left: 0;
   padding: 0.5rem;
+  background-image: linear-gradient(to bottom, purple,white);
 }
 
 .msgdiv{
@@ -92,7 +122,7 @@ body{
   align-items: flex-start;
   gap: 5px;
   /* border-bottom: 1px solid purple; */
-  margin-bottom: 3px;
+  
   width: 100%;
 }
 .signup{
@@ -108,7 +138,7 @@ body{
 /* background-image: linear-gradient(to right,#6f537c,purple); */
 /* max-width: 800px; */
 border-radius: 50px;
-height: 400px;
+height: 420px;
 
 }
 
@@ -146,6 +176,15 @@ margin-top: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+#profilepic{
+  color: white;
+}
+/* .profilepic{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+} */
 button{
   width: 20%;
   /* height: 30px; */
@@ -196,6 +235,26 @@ button{
   border-radius: 0.3rem;
 }
 
+@media(max-width:750px){
+  .imagediv{
+    display: none;
+  }
+  .imagediv2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    color: white;
+  }
+  .imagetext2{
+    color: white;
+  }
+  .cover{
+    position: relative;
+    top: -3rem;
+  }
+}
 @media(max-width:550px){
   .tasks ul{
     gap: 0.2rem;
@@ -220,4 +279,7 @@ button{
   button{
     width: 40%;
   }
+  /* .profilepic{
+    flex-direction: column;
+  } */
 }

@@ -2,7 +2,20 @@
 var express= require('express')
 var router=  express.Router()
 var User= require('../models/user')
+var multer = require('multer');
+var path = require('path');
+var fs = require('fs');
 
+var Storage= multer.diskStorage({
+  destination:"./public/uploads/",
+  filename:(req,file,cb)=>{
+    cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
+  }
+});
+
+var upload = multer({
+  storage:Storage
+}).single('file');
 
 var uid;
 router.get('/',(req,res)=>{
@@ -13,14 +26,14 @@ router.get('/signup',(req,res)=>{
   res.render('signup')
 })
 
-router.post('/signup',(req,res)=>{
+router.post('/signup',upload,(req,res)=>{
   console.log(req.body);
   if(!req.body.email||req.body.email=='') return res.status(404).json('Please enter email')
   if(!req.body.password||req.body.password=='') return res.status(404).json('Please enter password')
   User.findOne({email:req.body.email}).then((data)=>{
     if(!data) console.log('Fine user doesnt exist , create new account')
     else {
-      return res.status(200).json('User already exist, Please login1');
+       return res.status(200).json('User already exist, Please login1');
       res.end();
     }
   }).catch(err=>{
@@ -35,6 +48,7 @@ router.post('/signup',(req,res)=>{
     surname:req.body.surname,
     gender:req.body.gender,
     contact:req.body.contact,
+    image:req.file.filename,
     tasks:[],
     courses:[{completed:false},{completed:false},{completed:false}]
   })
@@ -62,7 +76,10 @@ router.post('/',(req,res)=>{
 })
 
 router.get('/home',(req,res)=>{
-  res.render('home',{uid:uid})
+  User.findOne({_id:uid},(err,data)=>{
+    res.render('home',{uid:uid});
+  })
+  
 })
 
 module.exports={loginroutes:router,uid} 
